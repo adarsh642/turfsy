@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
+/* ============================================
+   TURFSY — Global Design System
+   Primary: #89E900 (Kiwi Green)
+   Secondary: #222222 (Dark Night)
+============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #89e900;
+  --primary-dark: #6bc200;
+  --primary-glow: rgba(137, 233, 0, 0.22);
+  --primary-glow-strong: rgba(137, 233, 0, 0.42);
+  --secondary: #222222;
+  --secondary-light: #2e2e2e;
+  --secondary-lighter: #3a3a3a;
+  --bg-dark: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #202020;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #606060;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-primary: rgba(137, 233, 0, 0.28);
+  --gradient-hero: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #222222 100%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-lighter);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--primary-glow-strong);
+  color: var(--primary);
+}
+
+/* ── Glow Utilities ── */
+.glow-primary {
+  box-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--primary-glow);
+}
+.glow-primary-strong {
+  box-shadow: 0 0 30px var(--primary-glow-strong),
+    0 0 60px var(--primary-glow-strong);
+}
+.glow-text {
+  text-shadow: 0 0 20px var(--primary-glow-strong),
+    0 0 40px var(--primary-glow);
+}
+
+/* ── Grid background ── */
+.grid-bg {
+  background-image: linear-gradient(
+      rgba(137, 233, 0, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(137, 233, 0, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/*
+  ── Gradient border card ──
+  Cards use a 1px border that transitions from subtle to primary-green on hover.
+  bg-[var(--bg-card)] must be applied alongside this class.
+*/
+.gradient-border {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.gradient-border:hover {
+  border-color: var(--border-primary);
+  box-shadow: 0 4px 30px rgba(137, 233, 0, 0.06);
+}
+
+/* ── Smooth anchor scroll offset for fixed navbar ── */
+:target,
+[id] {
+  scroll-margin-top: 80px;
 }

@@ -18,7 +18,7 @@ export default function Navbar() {
   const navBg = useTransform(
     scrollY,
     [0, 80],
-    ["rgba(15,15,15,0)", "rgba(15,15,15,0.95)"]
+    ["rgba(15,15,15,0.2)", "rgba(15,15,15,0.95)"]
   );
 
   useEffect(() => {
@@ -31,14 +31,19 @@ export default function Navbar() {
       <motion.header
         style={{
           position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
+          top: scrolled ? "1rem" : "1.5rem",
+          left: "0",
+          right: "0",
+          width: "calc(100% - 2rem)",
+          maxWidth: "82rem",
+          margin: "0 auto",
           zIndex: 50,
           backgroundColor: navBg,
-          backdropFilter: scrolled ? "blur(16px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
-          transition: "backdrop-filter 0.3s, border-bottom 0.3s",
+          backdropFilter: "blur(16px)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "20px",
+          transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+          overflow: "hidden",
         }}
         id="navbar"
       >

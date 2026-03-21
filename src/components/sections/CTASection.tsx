@@ -11,6 +11,8 @@ export default function CTASection() {
         position: "relative",
         overflow: "hidden",
         backgroundColor: "var(--bg-dark)",
+        paddingTop: "4rem",
+        paddingBottom: "6rem",
         paddingLeft: "1.5rem",
         paddingRight: "1.5rem",
       }}

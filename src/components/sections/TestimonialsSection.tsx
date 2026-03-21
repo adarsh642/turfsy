@@ -48,6 +48,8 @@ export default function TestimonialsSection() {
         position: "relative",
         overflow: "hidden",
         backgroundColor: "var(--bg-dark)",
+        paddingTop: "6rem",
+        paddingBottom: "6rem",
         paddingLeft: "1.5rem",
         paddingRight: "1.5rem",
       }}

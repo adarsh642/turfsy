@@ -14,7 +14,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const navBg = useTransform(
     scrollY,
     [0, 80],
@@ -47,6 +47,20 @@ export default function Navbar() {
         }}
         id="navbar"
       >
+        {/* Scroll Progress Line */}
+        <motion.div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "3px",
+            backgroundColor: "var(--primary)",
+            transformOrigin: "left",
+            scaleX: scrollYProgress,
+            zIndex: 60,
+          }}
+        />
         <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
             {/* Logo */}

@@ -126,21 +126,7 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <div style={{ display: "flex", alignItems: "center", gap: "1rem" }} className="hidden md:flex">
-              <a
-                href="#features"
-                style={{
-                  color: "var(--text-secondary)",
-                  fontSize: "0.875rem",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                  padding: "8px 16px",
-                  transition: "color 0.2s"
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--text-secondary)")}
-              >
-                Login
-              </a>
+
               <motion.a
                 href="#download"
                 id="nav-cta"

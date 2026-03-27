@@ -78,24 +78,15 @@ export default function Navbar() {
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: 12,
-                  backgroundColor: "var(--primary)",
                   boxShadow: "0 0 16px rgba(137,233,0,0.3)",
+                  overflow: "hidden"
                 }}
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 2L3 7v10l9 5 9-5V7L12 2z"
-                    stroke="#222"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 22V12M3 7l9 5 9-5"
-                    stroke="#222"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img 
+                  src="/turf-logo.jpeg" 
+                  alt="Turfsy Logo" 
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+                />
               </div>
               <span style={{ fontSize: "1.25rem", fontWeight: 900, letterSpacing: "-0.02em", color: "#fff" }}>
                 Turf<span style={{ color: "var(--primary)" }}>sy</span>

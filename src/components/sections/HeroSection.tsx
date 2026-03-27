@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download, MapPin, Star, ChevronDown } from "lucide-react";
+import { ArrowRight, Download, MapPin, Star } from "lucide-react";
 
 const floatingStats = [
   { icon: MapPin, value: "500+", label: "Turfs" },
@@ -630,35 +630,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
-      <motion.div
-        style={{
-          position: "absolute",
-          bottom: 32,
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 4,
-          zIndex: 10,
-          pointerEvents: "none",
-        }}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <span
-          style={{
-            color: "var(--text-muted)",
-            fontSize: 11,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-          }}
-        >
-          Scroll
-        </span>
-        <ChevronDown size={18} style={{ color: "var(--primary)" }} />
-      </motion.div>
+
     </section>
   );
 }
